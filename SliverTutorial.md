@@ -330,6 +330,29 @@ sliver > use 4020c53e
 [*] Active beacon CERTAIN_PRISON (4020c53e-9dc0-43ca-b808-4aa663c74903
 ```
 
+# Armory
+
+Esta funcionalidad permite apliar con extensiones las capacidades de sliver. Para instalar todas las extensiones se lo realiza con este comando. 
+
+```bash
+sliver > armory install all
+
+? Install 12 aliases and 83 extensions? Yes
+[*] Installing alias 'Rubeus' (v0.0.21) ... done!
+[*] Installing alias 'SharpUp' (v0.0.1) ... done!
+[*] Installing alias 'SharPersist' (v0.0.1) ... done!
+[*] Installing alias 'KrbRelayUp' (v0.0.1) ... done!
+[*] Installing alias 'Sharp WMI' (v0.0.2) ... done!
+[*] Installing alias 'Sharp SMBExec' (v0.0.3) ... done!
+[*] Installing alias 'Certify' (v0.0.2) ... done!
+[*] Installing alias 'Sharp Hound 3' (v0.0.2) ... done!
+[*] Installing alias 'Seatbelt' (v0.0.3) ... done!
+[*] Installing alias 'NoPowerShell' (v0.0.1) ... done!
+[*] Installing alias 'SharpSecDump' (v0.0.1) ... done!
+[*] Installing alias 'SharpMapExec' (v0.0.1) ... done!
+...
+```
+
 # Referencias:
 
 mTLS: https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/ 
